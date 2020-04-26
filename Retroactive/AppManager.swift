@@ -393,6 +393,13 @@ class AppManager: NSObject {
     var configuratorURL: String? {
         return configurationDictionary?["ConfiguratorURL"] as? String
     }
+    
+    var marginBetweenApps: CGFloat {
+        if osMinorVersion == 14 {
+            return 43;
+        }
+        return 54;
+    }
 
     var supportedApps: [AppType] {
         if osMinorVersion <= 13 {
